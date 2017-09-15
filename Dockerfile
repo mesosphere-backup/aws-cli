@@ -1,5 +1,5 @@
-FROM alpine:3.5
-RUN apk -v --update add \
+FROM alpine:3.6
+RUN apk -v --no-cache add \
         python \
         py-pip \
         groff \
@@ -7,8 +7,7 @@ RUN apk -v --update add \
         mailcap \
         && \
     pip install --upgrade awscli s3cmd python-magic && \
-    apk -v --purge del py-pip && \
-    rm /var/cache/apk/*
+    apk -v --purge del py-pip
 VOLUME /root/.aws
 VOLUME /project
 WORKDIR /project

@@ -14,4 +14,4 @@ docker run --rm \
 	-e "AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}" \
 	-v "$(pwd):/project" \
 	mesosphere/aws-cli \
-	$@
+	"$@"
